@@ -1,19 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CS442 - Songs</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body>
-    <nav class="flex">
-        <a class="ml-2" href="{{ route('about.index') }}">About</a>
-        <a class="ml-2" href="{{ route('songs.index') }}">Songs</a>
-    </nav>
+@extends('layouts.main')
 
+@section('content')
     <div class="bg-white shadow-md rounded-md overflow-hidden max-w-lg mx-auto mt-16">
         <div class="bg-pink-100 py-2 px-4">
             <h2 class="text-xl font-semibold text-gray-800">{{ $title }}</h2>
@@ -31,5 +18,4 @@
             @endforeach
         </ul>
     </div>
-</body>
-</html>
+@endsection
