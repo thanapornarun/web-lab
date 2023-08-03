@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('abilities')->nullable();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamp('expires_at')->nullable();
-            $table->timestamps();
+            $table->timestamps(); // created_at, updated_at
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('personal_access_tokens'); // ข้อมูลหายไปด้วย *carefull*
     }
 };

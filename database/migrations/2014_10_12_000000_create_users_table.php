@@ -11,19 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // SQL: create table users (....)
+        // Naming Convetion
+        // table name: plural
+        // model name: Singular
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->id(); // `id` bigint auto_increament not null primary key
+            $table->string('name'); // `name` varchar(255) not null
+            $table->string('email')->unique(); // `email` varchar(255) not null unique
+            $table->timestamp('email_verified_at')->nullable(); // `email_verified_at` null timestamp/datetime
+            $table->string('password'); // `password` varchar(60)
+            $table->rememberToken(); // `remmember_token`
+            $table->timestamps(); // 1. `created_at` timestamp default current
+                                  // 2. `updated_at` timestamp default current
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations. / Rollback the migrations.
      */
     public function down(): void
     {

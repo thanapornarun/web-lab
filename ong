@@ -1,0 +1,53 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#7230
+    [34mall[39m: [
+      [34;4mApp\Models\Artist[39;24m {#7231
+        [34mid[39m: [35m1[39m,
+        [34mname[39m: "[32mGetsunova[39m",
+        [34mimage_path[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-07-25 10:37:20[39m",
+        [34mupdated_at[39m: "[32m2023-07-25 10:37:20[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Artist[39;24m {#7232
+        [34mid[39m: [35m2[39m,
+        [34mname[39m: "[32mBenedict Adams[39m",
+        [34mimage_path[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-07-25 10:39:44[39m",
+        [34mupdated_at[39m: "[32m2023-07-25 10:39:44[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Artist[39;24m {#7233
+        [34mid[39m: [35m3[39m,
+        [34mname[39m: "[32mMaxwell Schinner[39m",
+        [34mimage_path[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-07-25 10:40:03[39m",
+        [34mupdated_at[39m: "[32m2023-07-25 10:40:03[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Artist[39;24m {#7234
+        [34mid[39m: [35m4[39m,
+        [34mname[39m: "[32mCynthia Auer[39m",
+        [34mimage_path[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-07-25 10:57:52[39m",
+        [34mupdated_at[39m: "[32m2023-07-25 10:57:52[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Artist[39;24m {#7235
+        [34mid[39m: [35m5[39m,
+        [34mname[39m: "[32mGetsunova[39m",
+        [34mimage_path[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-07-25 10:58:25[39m",
+        [34mupdated_at[39m: "[32m2023-07-25 10:58:25[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Artist[39;24m {#7236
+        [34mid[39m: [35m6[39m,
+        [34mname[39m: "[32mJacques Cassin[39m",
+        [34mimage_path[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-07-25 11:02:30[39m",
+        [34mupdated_at[39m: "[32m2023-07-25 11:02:30[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+    ],
+  }
+
