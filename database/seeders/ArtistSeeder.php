@@ -14,9 +14,6 @@ class ArtistSeeder extends Seeder
      */
     public function run(): void
     {
-        Artist::factory()
-        ->count(10)
-        ->has(Song::factory()->count(3))
-        ->create();
+        Artist::factory()->count(10)->create();
     }
 }

@@ -18,15 +18,6 @@ class PlaylistSeeder extends Seeder
      */
     public function run(): void
     {
-        Playlist::factory()
-        ->count(10)
-        ->for(User::factory()->state([
-            'name' => fake()->name(),
-        ]))
-        ->hasAttached(
-            Song::factory()->count(3),
-            ['active' => true]
-        )
-        ->create();
+        Playlist::factory()->count(10)->has(Song::factory(5))->create();
     }
 }

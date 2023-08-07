@@ -20,31 +20,6 @@ class SongSeeder extends Seeder
             return;
         }
 
-        // $song = new Song();
-        // $song->title = "River";
-        // $song->artist = "Miley Cyrus";
-        // $song->duration = 3 * 60 + 20;
-        // $song->save();
-
-        // $song = new Song();
-        // $song->title = "Song for you";
-        // $song->artist = "Lee Isaacs";
-        // $song->duration = 2 * 60 + 48;
-        // $song->save();
-
-        // $song = new Song();
-        // $song->title = "คำถามซึ่งไร้คนตอบ";
-        // $song->artist = "Getsunova";
-        // $song->duration = 4 * 60 + 29;
-        // $song->save();
-
-        // Song::factory(1000)->create();
-
-        Song::factory()
-        ->count(10)
-        ->for(Artist::factory()->state([
-            'name' => fake()->name(),
-        ]))
-        ->create();
+        Song::factory()->count(50)->create();
     }
 }

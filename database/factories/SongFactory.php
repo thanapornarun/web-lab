@@ -19,8 +19,8 @@ class SongFactory extends Factory
     {
         return [
            'title' => fake()->realTextBetween(10, 20, 5),
-           'artist' => Artist::factory(),
-           'duration' => fake()->numberBetween(2 * 60, 5 * 60),
+           'artist_id' => Artist::inRandomorder()->first()->id,
+           'duration' => fake()->numberBetween(2 * 60, 5 * 60)
         ];
     }
 }

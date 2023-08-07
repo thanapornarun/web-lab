@@ -20,10 +20,8 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::factory()
-        ->count(10)
-        ->for(Playlist::factory()->state([
-            'name' => 'Your Playlist',
-        ]))
-        ->create();
+            ->count(10)
+            // ->has(Playlist::factory()->count(5))
+            ->create();
     }
 }

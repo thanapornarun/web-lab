@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignIdFor(\App\Models\Artist::class); // artist_id (FK)
+            // $table->foreignId('artist')->constrained();
             $table->integer('duration')->comment('in seconds');
             $table->timestamps();
             $table->softDeletes();

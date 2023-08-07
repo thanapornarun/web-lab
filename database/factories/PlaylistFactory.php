@@ -21,9 +21,9 @@ class PlaylistFactory extends Factory
     {
         return [
             'name' => fake()->realTextBetween(10, 20, 5),
-            'user_id' => User::factory(),
-            'song' => Song::factory(),
-            'accessibility' => 'PUBLIC'
+            'user_id' => User::inRandomorder()->first()->id,
+            // 'song_id' => Song::inRandomorder()->first()->id
+            'accessibility' => 'PUBLIC',
         ];
     }
 }
