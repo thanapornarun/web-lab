@@ -1,0 +1,24 @@
+{  
+    "destination":"U123e6b7f2c93c55231363dfd9677bcd6", 
+    "events":[
+        {
+            "type":"message",
+            "message":{
+                    "type":"text",
+                    "id":"475649032383889742","quoteToken":"U7EGGp1tYkyQm4xRWxco0Oei60xeY4xUNYuK0cO3eHWTYC5WgrJL9eCVpPVK9sStgs5TBllSO2vpvYR50KhNjZm_YmwcRwyqBXdK3nIUyAWjlEPoMQiTD9Hfu5_ZDGFFO2n5AumGsyvaGlZDACz8Q",
+                    "text":"aaaaa"
+            },
+            "webhookEventId":"01HBTW36F9XKMCT2PJ3N48W8V0",
+            "deliveryContext":{
+                "isRedelivery":false
+            },
+            "timestamp":1696340220172,
+            "source":{
+                "type":"user",
+                "userId":"U2e322256779174b39cfb6f4761e16550"
+            },
+            "replyToken":"a05cd2550ce8487d893f4f61a492970d",
+            "mode":"active"
+        }
+        ]
+}

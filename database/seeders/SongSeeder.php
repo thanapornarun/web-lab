@@ -20,6 +20,6 @@ class SongSeeder extends Seeder
             return;
         }
 
-        Song::factory()->count(50)->create();
+        Song::factory()->count(20)->create();
     }
 }

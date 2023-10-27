@@ -8,6 +8,33 @@
             <div class="hidden mt-2 mr-4 sm:inline-block">
                 <span></span>
             </div>
+            
+            @if( Auth::check() )
+                <div>
+                    <div class="mr-4 flex item-center">
+                        {{ Auth::user()->name }}
+                    </div>
+                    <div>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            @else
+                <div class="flex items-center">
+                    <div class="mr-4">
+                        <a href="{{ route('login')}} ">
+                            Login
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{{route('register')}}">
+                            Register
+                        </a>
+                    </div>
+                </div>
+            @endif
 
             <a href="#"
                class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none">Download</a>
@@ -52,6 +79,12 @@
                     <a href="{{ route('about.index') }}"
                        class="nav-menu {{ Route::currentRouteName() === 'about.index' ? 'active' : '' }}">
                         About
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('playlists.index') }}"
+                        class="nav-menu {{ Route::currentRouteName() === 'playlists.index' ? 'active' : '' ">
+                        My Playlists
                     </a>
                 </li>
             </ul>

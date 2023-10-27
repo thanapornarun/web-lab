@@ -351,6 +351,15 @@ $RECYCLE.BIN/
 # comment the following lines
 !.yarn/cache
 
+portainer/docker_config/
+portainer/compose/
+portainer/tls/
+portainer/bin/
+portainer/certs/
+portainer/portainer.db
+portainer/portainer.key
+portainer/portainer.pub
+
 # and uncomment the following lines
 # .pnp.*
 

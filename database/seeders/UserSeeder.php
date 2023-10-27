@@ -21,7 +21,26 @@ class UserSeeder extends Seeder
     {
         User::factory()
             ->count(10)
-            // ->has(Playlist::factory()->count(5))
+            ->has(Playlist::factory())
             ->create();
+
+            // User::factory(5)
+            // ->hasProfile(1)
+            // ->hasEvents(2)
+            // ->create()
+            // ->each(function ($user) {
+            //     $user->events->each(function ($event) {
+            //         $event->budgets()->saveMany(
+            //             Budget::factory(1)->create([
+            //                 'event_id' => $event->id,
+            //             ])
+            //                 ->each(function ($budget) {
+            //                     $budget->expenses()->saveMany(Expense::factory(5)->create([
+            //                         'budget_id' => $budget->id, 
+            //                     ]));
+            //                 })
+            //         );
+            //     });
+            // });
     }
 }

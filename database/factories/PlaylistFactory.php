@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
-use App\Models\Song;
 
 
 /**
@@ -22,15 +21,7 @@ class PlaylistFactory extends Factory
         return [
             'name' => fake()->realTextBetween(10, 20, 5),
             'user_id' => User::inRandomorder()->first()->id,
-            // 'song_id' => Song::inRandomorder()->first()->id
             'accessibility' => 'PUBLIC',
         ];
     }
 }
-
-// $table->id();
-// $table->string('name');
-// $table->foreignIdFor(User::class);
-// $table->string('accessibility')->default('PUBLIC')->comment('PUBLIC or PRIVATE');
-// $table->timestamps();
-// $table->softDeletes();

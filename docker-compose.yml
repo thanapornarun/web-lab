@@ -72,6 +72,15 @@ services:
             - '${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
+    localtunnel:
+        image: efrecon/localtunnel
+        restart: on-failure
+        command:
+            --local-host laravel.test --port 80 --subdomain ${LOCALTUNNEL_SUBDOMAIN}
+        depends_on:
+            - laravel.test
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge

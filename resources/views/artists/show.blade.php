@@ -6,10 +6,12 @@
     </h1>
 
     <div>
+        @can('update', App\Models\Artist::class)
         <a class="w-full border-l border-t border-b text-base font-medium rounded-l-md text-black bg-pink-300 hover:bg-gray-100 px-2 py-0.5"
             href=" {{ route('artists.edit', [ 'artist' => $artist ]) }}" >
             Edit Artist
         </a>
+        @endcan
         
         @if($artist->songs->isEmpty())
         <form class="inline-block" 
@@ -28,10 +30,12 @@
     <div class="bg-white shadow-md rounded-md overflow-hidden max-w-lg mx-auto mt-16">
         <div class="bg-pink-100 py-2 px-4">
             <h2 class="text-xl font-semibold text-gray-800">Songs</h2>
+            @can('create', App\Models\Artist::class)
             <a class="w-full border-l border-t border-b text-base font-medium rounded-l-md text-black bg-pink-300 hover:bg-gray-100 px-2 py-0.5"
                 href=" {{ route('artists.songs.create', [ 'artist' => $artist ]) }}" >
                 Add New Song
             </a>
+            @endcan
         </div>
     <ul class="divide-y divide-gray-200">
             @foreach ($artist->songs as $song)

@@ -24,10 +24,3 @@ class SongFactory extends Factory
         ];
     }
 }
-
-// $table->id();
-// $table->string('title');
-// $table->foreignIdFor(Artist::class); // `artist_id` not null reference on table `artists.id` FK
-// $table->integer('duration')->comment('in seconds');
-// $table->timestamps();
-// $table->softDeletes();

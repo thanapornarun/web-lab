@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Artist;
 use App\Models\Song;
+use Illuminate\Support\Facades\Gate;
 
 class ArtistController extends Controller
 {
@@ -24,6 +25,8 @@ class ArtistController extends Controller
      */
     public function create()
     {
+        Gate::authorize('create', Artist::class);
+        
         return view('artists.create');
     }
     
@@ -31,11 +34,14 @@ class ArtistController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {        
+        Gate::authorize('create', Artist::class);
+
+        $request->validate([
+            'name' => ['required', 'string', 'min:3', 'max:255']
+        ]);
+        
         $artists_name = $request->get('name');
-        if ($artists_name == null) {
-            return redirect()->baack();
-        }
         $artist = new Artist();
         $artist->name = $artists_name;
         $artist->save();
@@ -55,6 +61,7 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
+        Gate::authorize('update', $artist);
         return view('artists.edit', [ 'artist' => $artist]);
     }
     
@@ -63,6 +70,11 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
+        Gate::authorize('update', $artist);
+        $request->validate([
+            'name' => ['required', 'string', 'min:3', 'max:255']
+        ]);
+        
         $artist->name = $request->get('name');
         $artist->save();
         return redirect()->route('artists.show', ['artist' => $artist]);
@@ -73,7 +85,12 @@ class ArtistController extends Controller
      */
     public function destroy(Artist $artist)
     {
-        $artist->delete();
+        Gate::authorize('destroy', $artist);
+
+        if($artist->songs()->isEmpty()) {
+            $artist->delete();
+        }
+
         return redirect()->route('artists.index');
     }
     
@@ -84,6 +101,7 @@ class ArtistController extends Controller
      * Route Name: artists.songs.create
      */
     public function createSong(Artist $artist) {
+        Gate::authorize('update', $artist);
         return view('artists.create-song', ['artist' => $artist]);
     }
     
@@ -94,6 +112,13 @@ class ArtistController extends Controller
      * Route Name: artists.songs.store
      */
     public function storeSong(Request $request, Artist $artist) {
+        Gate::authorize('update', $artist);
+
+        $request->validate([
+            'title' => ['required', 'string', 'min:4', 'max:255'],
+            'duration' => ['required', 'integer', 'min:10']
+        ]);
+
         $song = new Song(); // use App\Models\Song;
         $song->title = $request->get('title');
         $song->duration = $request->get('duration');
